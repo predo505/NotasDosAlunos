@@ -6,19 +6,20 @@ public class Main {
 
         System.out.println("Quantos alunos deseja cadastrar?");
 
-        while (!scanner.hasNextInt()) { // Garante que o usuário digite um número válido
+//Garante que o usuário digite um número válido de alunos
+        while (!scanner.hasNextInt()) {
             System.out.println("Por favor, digite um número inteiro válido.");
-            scanner.next(); // Descarta a entrada inválida
+            scanner.next();
         }
 
         int quantidadeAlunos = scanner.nextInt();
         scanner.nextLine();
 
-        while (quantidadeAlunos <= 0) { // Verifica se o número é maior que 0
+        while (quantidadeAlunos <= 0) { 
             System.out.println("Por favor, digite um número maior que 0.");
-            while (!scanner.hasNextInt()) { // Garante que o usuário digite um número válido
+            while (!scanner.hasNextInt()) { 
                 System.out.println("Por favor, digite um número inteiro válido.");
-                scanner.next(); // Descarta a entrada inválida
+                scanner.next();
             }
             quantidadeAlunos = scanner.nextInt();
             scanner.nextLine();
