@@ -6,7 +6,7 @@ public class Main {
 
         System.out.println("Quantos alunos deseja cadastrar?");
 
-//Garante que o usuário digite um número válido de alunos
+        // Garante que o usuário digite sempre um número válido
         while (!scanner.hasNextInt()) {
             System.out.println("Por favor, digite um número inteiro válido.");
             scanner.next();
@@ -34,10 +34,12 @@ public class Main {
         double somaDasMedias = 0;
         double maiorNota = 0, menorNota = 10;
 
+        // Registra os alunos
         for (int i = 0; i < quantidadeAlunos; i++) {
             System.out.println("Digite o nome do " + (i + 1) + "º aluno: ");
             nomes[i] = scanner.nextLine();
 
+            // Registra as notas e evita que o usuário digite uma nota inválida
             double somaDasNotas = 0;
             for (int j = 0; j < 2; j++) {
                 System.out.println((j + 1) + "º nota de " + nomes[i] + ": ");
@@ -48,11 +50,13 @@ public class Main {
                 notas[i][j] = scanner.nextDouble();
                 somaDasNotas += notas[i][j];
 
+                // Notas maiores e notas menores
                 if (notas[i][j] > maiorNota) maiorNota = notas[i][j];
                 if (notas[i][j] < menorNota) menorNota = notas[i][j];
             }
             scanner.nextLine();
 
+            // Médias e status
             medias[i] = somaDasNotas / 2;
             somaDasMedias += medias[i];
 
@@ -67,6 +71,7 @@ public class Main {
             }
         }
 
+        // Status do aluno
         System.out.println("Resultados: ");
         System.out.println(" ");
         for (int i = 0; i < quantidadeAlunos; i++) {
@@ -85,6 +90,7 @@ public class Main {
 
         double mediaDaTurma = somaDasMedias / quantidadeAlunos;
 
+        // Resultado final da turma
         System.out.println("Estatísticas da Turma:");
         System.out.println(" ");
         System.out.println("Média da turma: " + mediaDaTurma);
